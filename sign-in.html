@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation Form</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 0;
+            overflow-y: hidden;
+            background: #f0f0f0;
+        }
+
+        .register-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    height: 100vh;
+    width: 100%;
+    margin-top: -80px; /* Move the container 50px upwards */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3)); /* Stronger gradient background */
+}
+
+.register-container {
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Blur effect */
+    -webkit-backdrop-filter: blur(15px); /* Safari support */
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Slight border for definition */
+    animation: moveUpDown 3s ease-in-out infinite; /* For smooth up-down motion */
+}
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(-2px);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+}
+
+        .register-toggle-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .register-toggle-button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            background-color: #f0f0f0;
+            color: #555;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-toggle-button.active {
+            background-color: #EC2127;
+            color: #ffffff;
+        }
+
+        .register-form input {
+            width: calc(50% - 12px);
+            padding: 12px;
+            margin: 12px 6px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .register-form .register-form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .register-form input[type="email"] {
+            width: 100%; /* Make email input take the full width */
+        }
+
+        .register-create-button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: #EC2127;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-create-button:hover {
+            background-color: #d11a21;
+        }
+
+        .register-logo {
+            max-width: 150px;
+            margin-bottom: 1rem;
+        }
+
+        /* navbar css */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-x: hidden;
+        }
+
+        .navbar img {
+            height: 50px;
+        }
+
+        .navbar-center {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav li {
+            margin: 0 15px;
+        }
+
+        .navbar-nav li a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.6s ease, transform 0.3s ease;
+        }
+
+        .navbar-nav li a:hover {
+            color: #EC2127;
+            transform: translateY(-3px);
+        }
+
+        .navbar-nav li a.active {
+            color: #EC2127;
+        }
+
+        .login-signup {
+            display: flex;
+        }
+
+        .login-signup a {
+            margin-left: 20px;
+            padding: 8px 5px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: black;
+        }
+
+        .login-signup a:hover {
+            color: #EC2127;
+            transform: translateY(-3px);
+        }
+
+        /* Style the hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">
+                <img src="assets\main-logo.png" alt="URSSTUDYMATE">
+            </a>
+        </div>
+
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="navbar-center">
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="course.html" class="nav-link">Courses</a></li>
+                <li><a href="price.html" class="nav-link">Pricing</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+            </ul>
+        </div>
+    
+        <div class="login-signup">
+            <a href="login.html">Login</a>
+            <a href="sign-in.html">Sign Up</a>
+        </div>
+    </nav>
+
+    <div class="register-wrapper">
+        <div class="register-container">
+            <header>
+                <h2 style="color:#EC2127;">Your Learning Journey Starts Here</h2>
+            </header>
+            <h3>Welcome Back!</h3>
+            <div class="register-toggle-buttons">
+                <button class="register-toggle-button active" onclick="toggleForm('student')">Student</button>
+                <button class="register-toggle-button" onclick="toggleForm('instructor')">Instructor</button>
+            </div>
+
+            <form id="studentForm" class="register-form" onsubmit="return validateForm('studentForm');">
+                <div class="register-form-group">
+                    <input type="text" name="firstName" placeholder="Enter first name" required>
+                    <input type="text" name="lastName" placeholder="Enter last name" required>
+                </div>
+                <input type="email" name="email" placeholder="Enter email address" required>
+                <div class="register-form-group">
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button class="register-create-button" type="submit">Sign In as Student</button>
+            </form>
+
+            <form id="instructorForm" class="register-form" onsubmit="return validateForm('instructorForm');" style="display: none;">
+                <div class="register-form-group">
+                    <input type="text" name="firstName" placeholder="Enter first name" required>
+                    <input type="text" name="lastName" placeholder="Enter last name" required>
+                </div>
+                <input type="email" name="email" placeholder="Enter email address" required>
+                <div class="register-form-group">
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button class="register-create-button" type="submit">Sign In as Instructor</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(userType) {
+            const studentForm = document.getElementById('studentForm');
+            const instructorForm = document.getElementById('instructorForm');
+            const studentButton = document.querySelector('.register-toggle-button:nth-child(1)');
+            const instructorButton = document.querySelector('.register-toggle-button:nth-child(2)');
+
+            if (userType === 'student') {
+                studentForm.style.display = 'block';
+                instructorForm.style.display = 'none';
+                studentButton.classList.add('active');
+                instructorButton.classList.remove('active');
+            } else {
+                studentForm.style.display = 'none';
+                instructorForm.style.display = 'block';
+                studentButton.classList.remove('active');
+                instructorButton.classList.add('active');
+            }
+        }
+
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            const email = form.querySelector('input[name="email"]').value;
+            const password = form.querySelector('input[name="password"]').value;
+            const confirmPassword = form.querySelector('input[name="confirmPassword"]').value;
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // Password length validation
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                return false;
+            }
+
+            // Password and confirm password match validation
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
